@@ -1,0 +1,6 @@
+C:\Users\Beng\Desktop\MyGameConsole\MyGameConsole\bin\Debug\MyGameConsole.exe.config
+C:\Users\Beng\Desktop\MyGameConsole\MyGameConsole\bin\Debug\MyGameConsole.exe
+C:\Users\Beng\Desktop\MyGameConsole\MyGameConsole\bin\Debug\MyGameConsole.pdb
+C:\Users\Beng\Desktop\MyGameConsole\MyGameConsole\obj\Debug\MyGameConsole.csprojResolveAssemblyReference.cache
+C:\Users\Beng\Desktop\MyGameConsole\MyGameConsole\obj\Debug\MyGameConsole.exe
+C:\Users\Beng\Desktop\MyGameConsole\MyGameConsole\obj\Debug\MyGameConsole.pdb
