@@ -21,14 +21,16 @@ namespace MyGameConsole
             {
                 Console.WriteLine("Invalid! please enter a name \n");
                 GetName();
-            }  
+            }
 
 
         }
         public override void MakeChoice()
         {
-            Console.WriteLine("{0} what will you pick : rock, paper, scissor, lizard, spock ", name);
-            choice = Console.ReadLine();
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("{0} what will you pick : rock , paper , scissor , lizard , spock \n", name);
+            choice = Console.ReadLine().ToLower();
+            Console.ResetColor();
             if (choice.Equals(""))
             {
                 Console.WriteLine("Invalid answer, please re-enter");

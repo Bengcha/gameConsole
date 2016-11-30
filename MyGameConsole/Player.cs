@@ -21,7 +21,7 @@ namespace MyGameConsole
         }
         public virtual void MakeChoice()
         {
-
+         
         }
         public string retrieveChoice()
         {

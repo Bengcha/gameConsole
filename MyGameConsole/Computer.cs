@@ -12,7 +12,7 @@ namespace MyGameConsole
         public override void GetName()
         {
             name = "iRobot";
-            Console.WriteLine("Hello my name is {0} and I'll be your opponent", name);
+            Console.WriteLine("Hello my name is {0} and I'll be your opponent \n", name);
 
             
         }
