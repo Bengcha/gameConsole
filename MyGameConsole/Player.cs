@@ -10,7 +10,7 @@ namespace MyGameConsole
     {
         public string choice;
         public string name;
-        public int score;
+        public int score = 0;
 
         public Player()
         {
@@ -23,10 +23,21 @@ namespace MyGameConsole
         {
 
         }
+        public string retrieveChoice()
+        {
+            return choice;
+        }
+        public void AddPointToScore()
+        {
+            score++;
+        }
+        public int RetrieveScore()
+        {
+            return score;
+        }
     }
-}
 
-            
+}
            
 
             

@@ -29,6 +29,13 @@ namespace MyGameConsole
         {
             Console.WriteLine("{0} what will you pick : rock, paper, scissor, lizard, spock ", name);
             choice = Console.ReadLine();
+            if (choice.Equals(""))
+            {
+                Console.WriteLine("Invalid answer, please re-enter");
+                MakeChoice();
+                    
+            }
+
         }
         }
     }

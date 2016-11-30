@@ -10,6 +10,7 @@ namespace MyGameConsole
     {
         Player player1;
         Player player2;
+        List<string> choices = new List<string> { "rock", "paper", "scissors", "spock", "lizard" };
 
 
         public void RunGame()
@@ -18,12 +19,10 @@ namespace MyGameConsole
             DisplayGameRules();
             ChooseGameType();
             ChoosePlayerNames();
-            //loop
-            GameStart();
+            playerStartGame();
+            
+
         }
-
-
-
 
         public void DisplayIntroduction()
         {
@@ -37,8 +36,7 @@ namespace MyGameConsole
             Console.WriteLine("press enter to continue...");
             Console.ReadLine();
         }
-
-        public void ChooseGameType()
+       public void ChooseGameType()
         {
             Console.WriteLine("Choose your number of players: 1 or 2 \n");
             string gametype = Console.ReadLine().ToLower();
@@ -65,10 +63,73 @@ namespace MyGameConsole
             player2.GetName();
         }
 
+
+        public void playerStartGame()
+        {
+
+
+            while (player1.RetrieveScore() < 3 && player2.RetrieveScore() < 3)
+            {
+                GameStart();
+
+            }
+
+
+
+                ShowWinner();
+                ChooseRestart();
+            }
+
+        
+
+
+        public void ShowWinner()
+        {
+            if (player1.RetrieveScore() > player2.RetrieveScore())
+            {
+                Console.WriteLine("Congratz {0} , you are better than {1}!", player1.name, player2.name);
+            }
+            else if (player1.RetrieveScore() < player2.RetrieveScore())
+            {
+                Console.WriteLine("Congratz {0}, you are better than {1}", player2.name, player1.name);
+            }
+
+            else if (player1.RetrieveScore() == player2.RetrieveScore())
+            {
+                Console.WriteLine("You both are amazing");
+            }
+
+        }
+
+        public void ChooseRestart()
+        {
+            Console.WriteLine("Game Over! Would you like to play again? Yes | No \n");
+            string userInput = Console.ReadLine().ToLower();
+            if (userInput == "yes")
+            {
+                ChoosePlayerNames();
+            }
+            else if (userInput == "no")
+            {
+                Console.WriteLine("Hope you enjoy the game. Goobye! \n");
+                Console.Read();
+                Environment.Exit(0);
+            }
+            else
+            {
+                Console.WriteLine("Please enter a valid answer \n");
+                ChooseRestart();
+            }
+        }
+
+
+
+
         public void GameStart()
         {
             player1.MakeChoice();
             player2.MakeChoice();
+
             string draw = "Its a draw this round";
             string win = " win this round";
 
@@ -82,6 +143,7 @@ namespace MyGameConsole
                 Console.WriteLine(player2.name + win);
                 Console.ReadLine();
                 player2.score++;
+
             }
             else if (player1.choice == "rock" && player2.choice == "scissor" || player2.choice == "lizard")
             {
@@ -151,32 +213,26 @@ namespace MyGameConsole
                 Console.ReadLine();
                 player1.score++;
             }
-            else if (player1.choice == "spock" && player2.choice== "paper" || player2.choice == "lizard")
+            else if (player1.choice == "spock" && player2.choice == "paper" || player2.choice == "lizard")
             {
                 Console.WriteLine(player2.name + win);
                 Console.ReadLine();
                 player2.score++;
             }
-            else
+            else if (player1.choice.Equals("") || player2.choice.Equals(""))
             {
-                Console.WriteLine("invalid answer");
+
                 GameStart();
 
             }
 
+        }
 
-            if (player1.score == 3)
-            {
-                Console.WriteLine("{0} win the Game!", player1);
-                Console.WriteLine();
-            }
-            else if (player2.score == 3)
-            {
-                Console.WriteLine("{} win the Game!", player2);
-                Console.ReadLine();
-            }
+
+
+
         }
     }
-}            
+           
 
     
