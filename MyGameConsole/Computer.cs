@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace MyGameConsole
 {
-    class ComputerPlayer
+    class Computer : Player
     {
+        public override void MakeChoice()
+        {
+            Random random = new Random();
+
+        }
     }
 }

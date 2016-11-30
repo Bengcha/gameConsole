@@ -11,9 +11,12 @@ namespace MyGameConsole
         static void Main(string[] args)
         {
             Console.WindowWidth = 180;
-            GameRule rule = new GameRule(3, "Player One");
-            rule.IntroToGameRule();
-            rule.ChooseGameType();
+
+            Game RSPLS = new Game();
+            RSPLS.RunGame();
+
+            Console.ReadKey();
+
         }
     }
 
